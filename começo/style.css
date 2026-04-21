@@ -1,0 +1,58 @@
+header {
+  background: #111;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.banner {
+  background-image: url("./assets/midia/jiufoto.png");
+  background-size: cover;     
+
+color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.banner button {
+  margin-top: 10px;
+  padding: 10px;
+  background: red;
+  color: white;
+
+}
+
+.faixas {
+  display: flex;
+  justify-content: center;
+  /*o gap pula os px da linha*/
+gap: 10px;
+  
+}
+
+.faixa {
+  padding: 15px;
+  background: #dadada;
+  border-radius: 5px;
+}
+.card {
+  background: white;
+  margin: 10px auto;
+  padding: 20px;
+  width: 300px;
+  border-radius: 10px;
+}
+
+.fotos {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.img {
+  width: 150px;
+  height: 100px;
+  background: gray;
+}
+

@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial;
+}
+
+body {
+  background-color: #f4f4f4;
+}
+
+
+header {
+  background: #111;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+nav a {
+  color: white;
+  margin-left: 15px;
+  text-decoration: none;
+}
+
+
+.banner {
+  background-image: url("./assets/midia/jiufoto.png");
+  background-size: cover;     
+    background-position: center; 
+
+color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.banner button {
+  margin-top: 10px;
+  padding: 10px;
+  background: red;
+  color: white;
+
+}
+
+
+section {
+  padding: 40px;
+  text-align: center;
+}
+
+.faixas {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.faixa {
+  padding: 15px;
+  background: #ddd;
+  border-radius: 5px;
+}
+
+
+.card {
+  background: white;
+  margin: 10px auto;
+  padding: 20px;
+  width: 300px;
+  border-radius: 10px;
+}
+
+.imagens {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.img {
+  width: 150px;
+  height: 100px;
+  background: gray;
+}
+
+
+footer {
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
