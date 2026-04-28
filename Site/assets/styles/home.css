@@ -96,33 +96,33 @@
 }
 
 
-.container-projeto {
+.container-bjj {
   padding: 8vh 10vw;
 }
 
-.title-projeto span {
+.title-bjj span {
   font-size: 2rem;
   color: var(--cor01);
   border-bottom: 4px solid var(--cor02);
 }
 
-.content-projeto {
+.content-bjj {
   display: flex;
   margin-top: 5vh;
 }
 
-.box-projeto {
+.box-bjj {
   display: flex;
   align-items: center;
   gap: 5vw;
 }
 
-.box-projeto-left h1 {
+.box-bjj-left h1 {
   font-size: 2.5rem;
   margin-bottom: 2vh;
 }
 
-.box-projeto-right img {
+.box-bjj-right img {
   width: 100%;
   max-width: 400px;
   border-radius: 15px;
