@@ -1,0 +1,19 @@
+header {
+background-color: black;
+color: white;
+justify-content: space-between;
+display: flex;
+
+}
+header a{
+    color: white;
+    text-decoration: none;
+}
+header a:hover{
+    color: red;
+}
+
+
+.bjj {
+    color: red;
+}
