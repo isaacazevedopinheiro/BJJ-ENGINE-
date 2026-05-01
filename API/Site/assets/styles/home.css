@@ -55,7 +55,7 @@
 .container-home {
   width: 100%;
   height: 90vh;
-  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("/Site/assets/midia/bjjbanner1.jpg");
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../midia/bjjbanner1.jpg");
   background-size: cover;
   background-position: center;
   display: flex;
