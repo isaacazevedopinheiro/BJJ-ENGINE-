@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Perfil Jiu-Jitsu</title>
+  <link rel="stylesheet" href="./assets/styles/formulario.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Descubra seu Perfil no Jiu-Jitsu</h1>
+
+    <form id="formJJ">
+
+    <div class="pergunta">
+  <p>1. Quando alguém se afasta, você:</p>
+  <label><input type="radio" name="q9" value="A"> Vai atrás</label>
+  <label><input type="radio" name="q9" value="B"> Tenta entender o motivo</label>
+  <label><input type="radio" name="q9" value="C"> Dá espaço</label>
+  <label><input type="radio" name="q9" value="D"> Segue em frente</label>
+</div>
+
+      <div class="pergunta">
+        <p>2. Em uma situação difícil, você costuma:</p>
+        <label><input type="radio" name="q2" value="A"> Ir pra cima</label>
+        <label><input type="radio" name="q2" value="B"> Pensar antes de agir</label>
+        <label><input type="radio" name="q2" value="C"> Evitar confronto</label>
+        <label><input type="radio" name="q2" value="D"> Resolver rápido</label>
+      </div>
+
+      <div class="pergunta">
+        <p>3. Você se considera mais:</p>
+        <label><input type="radio" name="q3" value="A"> Forte</label>
+        <label><input type="radio" name="q3" value="B"> Estratégico</label>
+        <label><input type="radio" name="q3" value="C"> Ágil</label>
+        <label><input type="radio" name="q3" value="D"> Competitivo</label>
+      </div>
+
+    
+      <div><p>4. O que mais te atrai em alguém?</p>
+  <label><input type="radio" name="q4" value="A"> Personalidade forte</label>
+  <label><input type="radio" name="q4" value="B"> Inteligência</label>
+  <label><input type="radio" name="q4" value="C"> Leveza</label>
+  <label><input type="radio" name="q4" value="D"> Confiança</label>
+</div><br>
+
+<div class="pergunta">
+  <p>5. Seu estilo de atrasar é:</p>
+  <label><input type="radio" name="q8" value="A"> Nunca atraso (ou quase)</label>
+  <label><input type="radio" name="q8" value="B"> Chego no horário certinho</label>
+  <label><input type="radio" name="q8" value="C"> Depende do dia</label>
+  <label><input type="radio" name="q8" value="D"> Sempre no limite do tempo</label>
+</div>
+
+      <div class="pergunta">
+        <p>6. Se alguém maior te enfrenta, você:</p>
+        <label><input type="radio" name="q6" value="A"> Vai pra cima</label>
+        <label><input type="radio" name="q6" value="B"> Usa estratégia</label>
+        <label><input type="radio" name="q6" value="C"> Escapa</label>
+        <label><input type="radio" name="q6" value="D"> Busca golpe decisivo</label>
+      </div>
+
+      <div class="pergunta">
+  <p>7. O que mais influencia suas escolhas?</p>
+  <label><input type="radio" name="q3" value="A"> Emoção</label>
+  <label><input type="radio" name="q3" value="B"> Lógica</label>
+  <label><input type="radio" name="q3" value="C"> Situação</label>
+  <label><input type="radio" name="q3" value="D"> Objetivo</label>
+</div>
+
+      
+<div class="pergunta">
+  <p>8. Você prefere um relacionamento:</p>
+  <label><input type="radio" name="q8" value="A"> Intenso</label>
+  <label><input type="radio" name="q8" value="B"> Estável</label>
+  <label><input type="radio" name="q8" value="C"> Leve</label>
+  <label><input type="radio" name="q8" value="D"> Direto e sem complicação</label>
+</div>
+
+    <div class="pergunta">
+  <p>9. Se tivesse uma pizza inteira só pra você, você:</p>
+  <label><input type="radio" name="q1" value="A"> Come rápido antes que alguém peça</label>
+  <label><input type="radio" name="q1" value="B"> Divide certinho em partes iguais</label>
+  <label><input type="radio" name="q1" value="C"> Come aos poucos curtindo</label>
+  <label><input type="radio" name="q1" value="D"> Foca nas melhores fatias primeiro</label>
+</div>
+      <div class="pergunta">
+        <p>10. Você gostaria mais de:</p>
+        <label><input type="radio" name="q10" value="A"> Controlar no chão</label>
+        <label><input type="radio" name="q10" value="B"> Se defender bem</label>
+        <label><input type="radio" name="q10" value="C"> Escapar sempre</label>
+        <label><input type="radio" name="q10" value="D"> Finalizar</label>
+      </div>
+
+      <button type="button" onclick="calcular()">Ver Resultado</button>
+
+    </form>
+
+     <center><img src="/API/Site/assets/midia/pressao.png"  width="300" height="400" alt="" >
+</center>
+
+  <center><img src="/API/Site/assets/midia/estrategico.png"  width="300" height="400" alt="" >
+</center>
+    <div id="resultado"></div>
+  </div>
+
+  <script src="./assets/js/formulario.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+:root {
+  --cor01: #1a1a1a; 
+  --cor02: #ff0000; 
+  --cor03: #ffffff;
+  --cor04: #26471b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
+              url("../midia/bjjbanner1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--cor03);
+  display: flex;
+  justify-content: center;
+  padding: 12vh 10vw;
+}
+
+.container {
+  width: 100%;
+  max-width: 700px;
+  background-color: rgba(34, 34, 34, 0.95);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 8px 8px 0px var(--cor02);
+  backdrop-filter: blur(5px);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  border-bottom: 3px solid var(--cor02);
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.pergunta {
+  margin-bottom: 25px;
+}
+
+.pergunta p {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+label {
+  display: block;
+  margin: 8px 0;
+  padding: 10px;
+  background-color: var(--cor01);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 1px solid transparent;
+}
+
+label:hover {
+  border: 1px solid var(--cor02);
+  transform: translateX(5px);
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+  accent-color: var(--cor02);
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  background-color: var(--cor02);
+  border: none;
+  color: var(--cor03);
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+button:hover {
+  background-color: var(--cor03);
+  color: var(--cor02);
+}
+
+#resultado {
+  margin-top: 25px;
+  padding: 20px;
+  background-color: #020617;
+  border-left: 5px solid var(--cor02);
+  border-radius: 10px;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+#resultado h2 {
+  color: var(--cor02);
+  margin-bottom: 10px;
+}
+
+#resultado p {
+  color: #ccc;
+  margin-bottom: 5px;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
