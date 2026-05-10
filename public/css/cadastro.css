@@ -1,3 +1,4 @@
+
 :root {
   --cor01: #1a1a1a; 
   --cor02: #ff0000; 
@@ -50,7 +51,6 @@
   color: var(--cor02);
 }
 
-
 footer {
   background-color: var(--cor01);
   color: white;
@@ -64,7 +64,6 @@ footer {
   border-top: 1px solid #333;
   padding-top: 2vh;
 }
-
 
 
 .container-login {
