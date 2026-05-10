@@ -1,40 +1,105 @@
-# BJJ-ENGINE-
+<img src="https://user-images.githubusercontent.com/46379117/192358781-9ca879e4-e55e-4d0d-b876-f9a4a2ed9ae8.png" width="600px">
 
-Este projeto consiste no desenvolvimento de um website como uma iniciativa pessoal e acadêmica, com o objetivo de aplicar, na prática, os conceitos aprendidos ao longo do curso de Ciência da Computação na SPTech.
-Neste projeto foram desenvolvidas as seguintes funcionalidades:
+_Web Data Visualization = Visualização de Dados na Web_
 
-📄 Formulário de cadastro:
+_Implementação de Referência para o seu Projeto de Primeiro Semestre_
 
--Permite que o usuário insira seus dados através de inputs (nome, email, senha).
+<hr>
 
-✅ formulário JavaScript:
+# Como usar
 
--Verificação dos campos antes do envio.
+1. Clone este repositório em sua máquina.
 
-🔐 Sistema de cadastro integrado com Node.js:
 
--Os dados do formulário são enviados para a API web-data-viz e armazenados no banco de dados.
+1. Crie, no Banco de Dados, as tabelas necessárias para o funcionamento deste projeto.
+- Siga as instruções no arquivo **/src/database/script-tabelas.sql**
 
-🗄️ Persistência de dados:
 
--Utilização de banco de dados para salvar as informações dos usuários.
+3. Acesse o arquivo **app.js** e parametrize o ambiente.
+- Se você estiver utilizando o Ambiente de Produção (remoto), comente a linha 2 e deixe habilitada a linha 1 onde está o valor **var ambiente_processo = 'producao';**
+- Se você estiver utilizando o Ambiente de Desenvolvimento (local), comente a linha 1 e deixe habilitada a linha 2 onde está o valor **var ambiente_processo = 'desenvolvimento';**
 
-📊 Dashboard simples:
+4. Adicione as credenciais de Banco de Dados no arquivo **.env** ou em **.env.dev**, seguindo as instruções neste.
 
--Exibição dos dados cadastrados de forma organizada.
+5. Acesse este repositório no seu terminal (GitBash ou VSCode) e execute os comandos abaixo:
 
-🎨 Interface web com HTML e CSS:
+```
+npm i
+``` 
+_O comando acima irá instalar as bibliotecas necessárias para o funcionamento do projeto. As bibliotecas a serem instaladas estão listadas no arquivo **package.json** então é muito importante que este não seja alterado. Será criada uma nova pasta/diretório chamado **node_modules** quando o comando for finalizado, que é onde as bibliotecas estão localizadas. Não altere a pasta/diretório._
 
--Estruturação e estilização das páginas do site.
+```
+npm start
+``` 
 
-🔄 Integração front-end e back-end:
+_O comando acima irá iniciar seu projeto e efetuar os comandos de acordo com a sua parametrização feita nos passos anteriores._
 
--Comunicação entre o site e o servidor utilizando requisições HTTP.
+6. Para "ver" seu projeto funcionando, acesse em seu navegador o caminho **informado no terminal**.
 
-A escolha do tema não foi baseada apenas em fatores técnicos, mas principalmente em experiências e interesses pessoais, especialmente pela minha conexão com o Jiu-Jitsu, um esporte que considero muito interessante e marcante.
+7. Caso queira parar a execução, tecle **CTRL+C** no terminal em que o projeto está rodando.
 
-O Jiu-Jitsu é uma arte marcial de origem japonesa, conhecida como “arte suave”, que se baseia em técnicas de luta agarrada (grappling), alavancas, imobilizações e finalizações, priorizando estratégia e técnica ao invés de força. Ao longo do tempo, essa prática foi adaptada e aprimorada no Brasil, dando origem ao Brazilian Jiu-Jitsu (BJJ), que incorporou novas estratégias, maior ênfase no combate de solo e evoluções técnicas, tornando-se uma modalidade amplamente difundida no cenário mundial.
+## Adicionar novo recurso ao projeto
 
-Meu primeiro contato com o Jiu-Jitsu aconteceu em 2024, mas antes disso eu já tinha experiências com outros desportos de combate e artes marciais, o que facilitou minha adaptação e interesse pela modalidade.
+**"Recurso? O que é?"** Enquanto no Banco de Dados chamamos as tabelas de "entidades", quando tratamos de desenvolvimento WEB usamos a palavra "recurso" para se referir a algo que podemos criar, ler, atualizar ou deletar [1]. Estas ações são conhecidas como CRUD: Create, Read, Update e Delete. Para acessar cada ação, usamos os métodos HTTP: POST, GET, PUT e DELETE [2]. (Há outros verbos, porém com estes já conseguimos efetuar CRUDs). 
 
-Durante a prática, aprendi valores admiráveis como autocontrole, estratégia, respeito ao oponente, disciplina, tomada de decisão em tempo real, adaptação constante e análise do comportamento do oponente, habilidades que vão além do esporte e contribuem também para o desenvolvimento pessoal.
+**Tabela para ajudar a fazer a associação**
+
+<table>
+  <tr>
+    <th>C.R.U.D</th>
+    <th>Ação</th>
+    <th>Tradução</th>
+    <th>Verbo HTTP *</th>
+    <th>Comando BD</th>
+  </tr>
+  <tr>
+    <td>C</td>
+    <td>Create</td>
+    <td>Criar</td>
+    <td>POST</td>
+    <td>INSERT</td>
+  </tr>
+  <tr>
+    <td>R</td>
+    <td>Read</td>
+    <td>Ler</td>
+    <td>GET</td>
+    <td>SELECT</td>
+  </tr>
+  <tr>
+    <td>U</td>
+    <td>Update</td>
+    <td>Atualizar</td>
+    <td>PUT</td>
+    <td>UPDATE</td>
+  </tr>
+  <tr>
+    <td>D</td>
+    <td>Delete</td>
+    <td>Deletar</td>
+    <td>DELETE</td>
+    <td>DELETE</td>
+  </tr>
+</table>
+
+_* Você verá o verbo HTTP sendo apontado nos arquivos em /routes_
+
+**"E no meu projeto, o que seria um recurso?"** Em web-data-viz manipulamos os recursos **usuário**, **aviso** e **medida**. Podemos conferir isso vendo para quais entidades foram criados os caminhos de inserção e captura de dados, que envolve os diretórios **routes**, **controllers** e **models**.
+
+Abaixo, uma figura que ajuda a compreender o caminho percorrido para, por exemplo, efetuar o cadastro de um usuário:
+
+
+![image](https://github.com/user-attachments/assets/d576f178-0da6-437e-b5c9-658e3ebaf6ca)
+
+
+
+**Entendi o que é um recurso e gostaria de adicionar um novo ao meu projeto! Como faz?**  
+- Primeiro, crie a tabela no Banco de Dados referente a este recurso. Exemplos de recursos comuns de serem adicionados ao projeto no primeiro semestre: Silo, Aquário, Sala, Andar, Endereço, Mercado, Prateleira, Unidade, Carro, Caminhão...  
+- Assim que criada a tabela, faça todo o caminho de **front-end → routes → controllers → models** replicando o que já existe!  
+- Exemplo, se você quiser a funcionalidade de adicionar um novo Aquário, deve criar arquivos referentes ao aquario nos diretórios e replicar também as funções.  
+- Dica: A implementação de AVISO já contém o CRUD completo! :wink:
+ 
+### Fontes bibliográficas
+
+[1] https://datatracker.ietf.org/doc/html/rfc2396  
+[2] https://datatracker.ietf.org/doc/html/rfc7231
