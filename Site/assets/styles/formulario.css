@@ -24,6 +24,34 @@ body {
   padding: 12vh 10vw;
 }
 
+.btn-voltar {
+    position: fixed; 
+    top: 20px;
+    left: 20px;
+    z-index: 9999; 
+    
+    background-color: var(--cor01);
+    color: var(--cor03);
+    padding: 10px 20px;
+    border: 2px solid var(--cor02);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+.btn-voltar:hover {
+    background-color: var(--cor02);
+    color: white;
+    transform: scale(1.05);
+}
+
+
+
 .container {
   width: 100%;
   max-width: 700px;
