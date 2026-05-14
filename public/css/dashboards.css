@@ -81,7 +81,7 @@ body {
   border: 1px solid var(--cor02);
 }
 
-/* DASHBOARD */
+
 .dash {
   flex: 1;
   padding: 30px;
@@ -115,7 +115,7 @@ body {
   background-color: #222;
 }
 
-/* GRÁFICO */
+
 .graph {
   background-color: #111;
   padding: 20px;
@@ -139,7 +139,7 @@ body {
   height: 100vh;
 }
 
-/* ESQUERDA */
+
 .lado-esquerdo {
   width: 30%;
   background: #1a1a1a;
@@ -147,13 +147,13 @@ body {
   padding: 20px;
 }
 
-/* DIREITA */
+
 .lado-direito {
   width: 70%;
   padding: 20px;
 }
 
-/* GRÁFICOS LADO A LADO */
+
 .graficos {
   display: flex;
   gap: 20px;

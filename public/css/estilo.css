@@ -86,7 +86,7 @@ body {
   font-weight: 800;
 }
 
-/* MISSÃO VISÃO VALORES */
+
 
 .social {
   background-color: #e5e5e5;
@@ -118,7 +118,7 @@ body {
   align-items: center;
 }
 
-/* FOOTER */
+
 
 .footer {
   background-color: #32b9cd;
@@ -137,7 +137,7 @@ body {
   font-size: 12px;
 }
 
-/* LOGIN */
+
 
 .login {
   height: var(--tamanho-login);
@@ -235,7 +235,7 @@ body {
   display: none
 }
 
-/* FORMULARIO */
+
 
 .alerta_erro{
   display: flex;
@@ -302,7 +302,7 @@ input {
   width: 50px;
 }
 
-/* SIMULADOR */
+
 
 .simulador {
   color: white;
@@ -314,7 +314,6 @@ input {
   height: var(--tamanho-simulador);
 }
 
-/* ALERTA */
 
 #alerta {
   position: absolute;
