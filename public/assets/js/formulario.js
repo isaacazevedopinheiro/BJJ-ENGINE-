@@ -28,7 +28,7 @@ function calcular() {
     case "A":
       resultado = `
         <h2>Estilo: Pressão</h2>
-          <center><img src="/API/Site/assets/midia/pressao.png"  width="300" height="400" alt="" >
+          <center><img src="./assets/midia/pressao.png"  width="300" height="400" alt="" >
 </center>
         <p><b>Perfil:</b> Passador / Quedador</p>
         <p><b>Finalização:</b> Mata-leão ou Americana</p>
@@ -38,7 +38,9 @@ function calcular() {
     case "B":
       resultado = `
         <h2>Estilo: Estratégico</h2>
-        <img src="./assets/img/estrategico.jpg" class="img-resultado">
+       <center>
+        <img src="./assets/midia/estrategico.png"width="300" height="400" alt="">
+        </center>
         <p><b>Perfil:</b> Defensivo Técnico</p>
         <p><b>Finalização:</b> Triângulo ou Arm-lock</p>
       `;

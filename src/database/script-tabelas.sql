@@ -6,6 +6,7 @@
 comandos para mysql server
 */
 
+
 CREATE 	database BJJ_ENGINE;
 USE BJJ_ENGINE;
 
@@ -13,7 +14,7 @@ CREATE TABLE Nivel_De_Acesso(
     idNivel INT PRIMARY KEY auto_increment,
     Nivel_De_Acesso VARCHAR(45) CHECK (Nivel_De_Acesso IN ('ADMIN', 'NORMAL')) );
 
-CREATE TABLE usuario(
+CREATE TABLE Usuario(
     idUsuario INT PRIMARY KEY auto_increment,
     Nome VARCHAR (45) NOT NULL,
     NickName VARCHAR(45) UNIQUE,
@@ -25,7 +26,7 @@ CREATE TABLE usuario(
 INSERT INTO Nivel_De_Acesso (Nivel_De_Acesso) VALUES 
 ('ADMIN'), 
 ('NORMAL');
-INSERT INTO usuario (Nome, Nickname, Email, Senha, FkNivelDeAcesso) VALUES
+INSERT INTO Usuario (Nome, Nickname, Email, Senha, FkNivelDeAcesso) VALUES
 ('Isaac', 'IsaacAdmin', 'isaac@bjj.com', 'senha123', 1),
 ('Noob', 'NoobMaster', 'noob@bjj.com', '123456', 2);
 
@@ -38,17 +39,15 @@ FROM Usuario u
 JOIN Nivel_De_Acesso n
 on u.FkNivelDeAcesso = n.idNivel;
 
-select * from usuario;
- 
+select * from usuario; 
 	delete from usuario where idUsuario = 21;
 
-alter table Usuario drop column NickName;
-
-
-
+alter table usuario drop column NickName;
 
 
 show columns from usuario;
+
+
 
 
 
