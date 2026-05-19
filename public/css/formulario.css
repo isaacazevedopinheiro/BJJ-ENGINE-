@@ -38,9 +38,9 @@ body {
     text-decoration: none;
     font-weight: bold;
     font-size: 14px;
-    display: flex;
+/*     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 8px; */
     transition: 0.3s;
 }
 
@@ -123,7 +123,7 @@ button:hover {
   background-color: #020617;
   border-left: 5px solid var(--cor02);
   border-radius: 10px;
-  animation: fadeIn 0.4s ease-in-out;
+/*   animation: fadeIn 0.4s ease-in-out; */
 }
 
 #resultado h2 {
@@ -136,7 +136,7 @@ button:hover {
   margin-bottom: 5px;
 }
 
-
+/* 
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -146,4 +146,4 @@ button:hover {
     opacity: 1;
     transform: translateY(0);
   }
-}
+} */
