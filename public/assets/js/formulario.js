@@ -4,7 +4,7 @@ function calcular() {
   let respostas = [0, 0, 0, 0];
 
   for (let i = 1; i <= 10; i++) {
-    /* busca input marcado na pergunta atual */
+    /* busca input mArcado na pergunta  */
     let questao = document.querySelector(`input[name="q${i}"]:checked`);
 
     if (questao) {
