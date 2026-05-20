@@ -166,3 +166,11 @@ canvas {
   border-radius: 10px;
   padding: 10px;
 }
+
+#graficos{
+width: 50%;
+align-items: center;
+border: 2px solid var(--cor02);
+  
+
+}
