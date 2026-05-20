@@ -29,7 +29,7 @@
 <!-- <body onload=" atualizarFeed()"> -->
 
 <body>
-
+<body onload="obterDados()"> <!-- Chamando a função obterDados ao carregar a página -->
     <div class="janela">
   <div class="header-left">
     <h1>BJJ <span>Engine</span></h1>
@@ -50,9 +50,15 @@
 
     <div class="btn-nav-white">
       <a href="./edicao-aviso.html">
-        <h3>Treinos</h3>
+        <h3>Mural de Avisos</h3>
       </a>
     </div>
+
+     <div class="btn-nav-white">
+                <a href="../formulario.html">
+                   <h3>Formulario</h3> 
+                </a> </div>
+
 
     <div class="btn-logout" onclick="limparSessao()">
       <h3>Sair</h3>
@@ -64,7 +70,16 @@
 
     <div class="btns-dash" id="btnTreino"></div>
 
-    <div id="graficos"></div>
+    <div id="graficos">
+
+<div>
+  <!-- Elemento canvas onde o gráfico de linha será desenhado -->
+  <canvas id="linha"></canvas>
+  <!-- Elemento canvas onde o gráfico de barra será desenhado -->
+  <canvas id="barra"></canvas>
+</div>
+
+    </div>
   </div>
 </div>
 
@@ -73,28 +88,8 @@
 
 </html>
 
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Exemplo de como Plotar Gráficos</title>
-  <!-- Incluindo a biblioteca Chart.js para desenhar gráficos -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
-<body onload="obterDados()"> <!-- Chamando a função obterDados ao carregar a página -->
-  
-<!-- Título para o gráfico de linhas -->
-Gráfico de linhas
-<div>
-  <!-- Elemento canvas onde o gráfico de linha será desenhado -->
-  <canvas id="linha"></canvas>
-  <!-- Elemento canvas onde o gráfico de barra será desenhado -->
-  <canvas id="barra"></canvas>
-</div>
 
-</body>
-</html>
+
 <script>
 
 // Função chamada ao carregar a página para obter e processar os dados
