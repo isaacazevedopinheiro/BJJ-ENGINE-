@@ -7,7 +7,7 @@ comandos para mysql server
 */
 
 
-CREATE 	database BJJ_ENGINE;
+REATE 	database BJJ_ENGINE;
 USE BJJ_ENGINE;
 
 CREATE TABLE Nivel_De_Acesso(
@@ -22,6 +22,13 @@ CREATE TABLE Usuario(
     Senha VARCHAR(45) NOT NULL,
     FkNivelDeAcesso INT,
     CONSTRAINT CtFkNivel_De_Acesso FOREIGN KEY (FkNivelDeAcesso) REFERENCES Nivel_De_Acesso (idNivel));
+
+CREATE TABLE perfil_usuario (
+id_perfil INT PRIMARY KEY AUTO_INCREMENT,
+fk_usuario INT,
+resposta VARCHAR(45),
+CONSTRAINT cfk_usuario FOREIGN KEY (fk_usuario) REFERENCES Usuario(idUsuario)
+);
 
 INSERT INTO Nivel_De_Acesso (Nivel_De_Acesso) VALUES 
 ('ADMIN'), 
@@ -42,7 +49,6 @@ select * from Usuario;
 	delete from Usuario where idUsuario = 21;
 
 alter table Usuario drop column NickName;
-
 
 show columns from Usuario;
 

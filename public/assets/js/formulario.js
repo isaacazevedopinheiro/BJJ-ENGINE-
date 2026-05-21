@@ -1,3 +1,5 @@
+ let estilos = ''
+
 function calcular() {
   /*posições zeradas pRU placar */
   /*           0=a, 1=b, 2=c, 3=d */
@@ -33,7 +35,7 @@ function calcular() {
 
   let resultado = "";
 
-  let estilos = ''
+ 
 
  if (maior === "A") {
   estilos='pressao';
@@ -73,4 +75,54 @@ function calcular() {
   }
 
   document.getElementById("resultado").innerHTML = resultado;
+
+   cadastrar()
 }
+
+ function cadastrar() {
+    // aguardar();
+    let id_usuario = sessionStorage.ID_USUARIO;
+
+    // Enviando o valor da nova input
+    fetch("/formulario/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+
+        fk_usuarioServer: id_usuario,
+        estiloServer: estilos
+      
+      }),
+      
+      
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+          // cardErro.style.display = "block";
+
+          // mensagem_erro.innerHTML =
+          //   "Cadastro realizado com sucesso!";
+
+          // setTimeout(() => {
+          //   window.location = "login.html";
+          // }, "2000");
+
+          // limparFormulario();
+          // finalizarAguardar();
+        } else {
+          throw "Houve um erro ao tentar realizar o cadastro!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+        finalizarAguardar();
+      });
+
+    return false;
+  }
