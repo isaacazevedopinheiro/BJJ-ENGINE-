@@ -33,7 +33,11 @@ function calcular() {
 
   let resultado = "";
 
+  let estilos = ''
+
  if (maior === "A") {
+  estilos='pressao';
+
     resultado = `
       <h2>Estilo: Pressão</h2>
         <center><img src="./assets/midia/pressao.png"  width="300" height="400" alt="" ></center>
@@ -41,6 +45,7 @@ function calcular() {
       <p><b>Finalização:</b> Mata-leão ou Americana</p>
     `;
   } else if (maior === "B") {
+    estilos= 'estrategico';
     resultado = `
       <h2>Estilo: Estratégico</h2>
      <center>
@@ -50,13 +55,15 @@ function calcular() {
       <p><b>Finalização:</b> Triângulo ou Arm-lock</p>
     `;
   } else if (maior === "C") {
+    estilos = 'flexivel';
     resultado = `
-      <h2>Estilo: Móvel</h2>
+      <h2>Estilo: Flexivel</h2>
       <img src="./assets/img/movel.jpg" class="img-resultado">
       <p><b>Perfil:</b> Guarda / Escapador</p>
       <p><b>Finalização:</b> Triângulo ou Chave de perna</p>
     `;
-  } else {
+  } else {  
+    estilos = 'finalizador';
     resultado = `
       <h2>Estilo: Finalizador</h2>
       <img src="./assets/img/finalizador.jpg" class="img-resultado">

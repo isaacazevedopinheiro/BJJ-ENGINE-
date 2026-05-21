@@ -21,7 +21,7 @@ body {
   height: 100vh;
 }
 
-/* MENU LATERAL */
+
 .header-left {
   width: 250px;
   background-color: #111;
@@ -167,10 +167,33 @@ canvas {
   padding: 10px;
 }
 
-#graficos{
-width: 50%;
-align-items: center;
-border: 2px solid var(--cor02);
-  
 
+
+}
+
+
+
+.title-kpis span {
+  color: white;
+  font-size: 2rem;
+}
+
+.content-kpis {
+  display: flex;
+  justify-content: center;
+  gap: 3vw;
+  margin-top: 5vh;
+}
+
+.box-kpis {
+  background-color: #222;
+  padding: 16px;
+  width: 250px;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+
+.box-kpis:hover {
+  transform: translateY(-10px);
+  border: 1px solid var(--cor02);
 }

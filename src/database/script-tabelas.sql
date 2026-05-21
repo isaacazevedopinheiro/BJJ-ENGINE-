@@ -37,15 +37,14 @@ u.Senha,
 n.Nivel_de_Acesso AS 'Cargo'
 FROM Usuario u
 JOIN Nivel_De_Acesso n
-on u.FkNivelDeAcesso = n.idNivel;
+on u.FkNivelDeAcesso = n.idNivel;U
+select * from Usuario; 
+	delete from Usuario where idUsuario = 21;
 
-select * from usuario; 
-	delete from usuario where idUsuario = 21;
-
-alter table usuario drop column NickName;
+alter table Usuario drop column NickName;
 
 
-show columns from usuario;
+show columns from Usuario;
 
 
 
@@ -63,7 +62,7 @@ CREATE TABLE empresa (
 	codigo_ativacao VARCHAR(50)
 );
 
-CREATE TABLE usuario (
+CREATE TABLE Usuario (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	nome VARCHAR(50),
 	email VARCHAR(50),
@@ -76,8 +75,8 @@ CREATE TABLE aviso (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	titulo VARCHAR(100),
 	descricao VARCHAR(150),
-	fk_usuario INT,
-	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
+	fk_Usuario INT,
+	FOREIGN KEY (fk_Usuario) REFERENCES Usuario(id)
 );
 
 create table aquario (
