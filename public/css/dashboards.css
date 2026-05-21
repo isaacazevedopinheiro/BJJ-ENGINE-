@@ -84,7 +84,7 @@ body {
 
 .dash {
   flex: 1;
-  padding: 30px;
+  padding: 50px;
 }
 
 .btns-dash {
@@ -157,6 +157,7 @@ body {
 .graficos {
   display: flex;
   gap: 20px;
+
 }
 
 canvas {
@@ -168,8 +169,6 @@ canvas {
 }
 
 
-
-}
 
 
 
@@ -196,4 +195,7 @@ canvas {
 .box-kpis:hover {
   transform: translateY(-10px);
   border: 1px solid var(--cor02);
+}
+#graficos{
+  width: 50%;
 }

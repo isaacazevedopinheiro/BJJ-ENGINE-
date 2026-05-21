@@ -38,7 +38,7 @@ function calcular() {
  
 
  if (maior === "A") {
-  estilos='pressao';
+  estilos='Pressão';
 
     resultado = `
       <h2>Estilo: Pressão</h2>
@@ -47,7 +47,7 @@ function calcular() {
       <p><b>Finalização:</b> Mata-leão ou Americana</p>
     `;
   } else if (maior === "B") {
-    estilos= 'estrategico';
+    estilos= 'Estratégico';
     resultado = `
       <h2>Estilo: Estratégico</h2>
      <center>
@@ -57,7 +57,7 @@ function calcular() {
       <p><b>Finalização:</b> Triângulo ou Arm-lock</p>
     `;
   } else if (maior === "C") {
-    estilos = 'flexivel';
+    estilos = 'Flexivel';
     resultado = `
       <h2>Estilo: Flexivel</h2>
       <img src="./assets/img/movel.jpg" class="img-resultado">
@@ -65,7 +65,7 @@ function calcular() {
       <p><b>Finalização:</b> Triângulo ou Chave de perna</p>
     `;
   } else {  
-    estilos = 'finalizador';
+    estilos = 'Finalizador';
     resultado = `
       <h2>Estilo: Finalizador</h2>
       <img src="./assets/img/finalizador.jpg" class="img-resultado">
@@ -80,8 +80,22 @@ function calcular() {
 }
 
  function cadastrar() {
-    // aguardar();
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+    let perfil = estilos;
     let id_usuario = sessionStorage.ID_USUARIO;
+
+
+    // Verificando se há algum campo em branco
+    if (
+      perfil == "" ||
+      id_usuario == ""
+    ) 
+    {
+   alert('(Mensagem de erro para todos os campos em branco)')
+   
+    } 
+
 
     // Enviando o valor da nova input
     fetch("/formulario/cadastrar", {
@@ -92,10 +106,9 @@ function calcular() {
       body: JSON.stringify({
         // crie um atributo que recebe o valor recuperado aqui
         // Agora vá para o arquivo routes/usuario.js
-
-        fk_usuarioServer: id_usuario,
-        estiloServer: estilos
-      
+        fkUsuarioServer: id_usuario,
+        respostaServer: perfil
+       
       }),
       
       
@@ -104,24 +117,14 @@ function calcular() {
         console.log("resposta: ", resposta);
 
         if (resposta.ok) {
-          // cardErro.style.display = "block";
 
-          // mensagem_erro.innerHTML =
-          //   "Cadastro realizado com sucesso!";
-
-          // setTimeout(() => {
-          //   window.location = "login.html";
-          // }, "2000");
-
-          // limparFormulario();
-          // finalizarAguardar();
         } else {
           throw "Houve um erro ao tentar realizar o cadastro!";
         }
       })
       .catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);
-        finalizarAguardar();
+
       });
 
     return false;

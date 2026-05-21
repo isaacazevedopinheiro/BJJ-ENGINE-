@@ -2,41 +2,43 @@
 <html lang="pt-br">
 
 <head>
-    <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> BJJ - ENGINE</title>
+  <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> BJJ - ENGINE</title>
 
-    
-    <link rel="stylesheet" href="./../css/dashboards.css">
-    <link rel="stylesheet" href="./../css/estilo.css" />
-    <script src="../js/sessao.js"></script>
-    <script src="./../js/alerta.js"></script>
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+  <link rel="stylesheet" href="./../css/dashboards.css">
+  <link rel="stylesheet" href="./../css/estilo.css" />
+  <script src="../js/sessao.js"></script>
+  <script src="./../js/alerta.js"></script>
 
-    <!-- scripts do Chart.js - 2022-1 -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
 
-    <!--FONT AWESOME-->
-    <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script>
+  <!-- scripts do Chart.js - 2022-1 -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!--FONT AWESOME-->
+  <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script>
 </head>
 
 <!-- <body onload=" atualizarFeed()"> -->
 
-<body>
-<body onload="obterDados()"> <!-- Chamando a função obterDados ao carregar a página -->
-    <div class="janela">
+
+<body onload="obterTotalUsuarios(), listarTotalUsuariosMaiorPerfil(), obterDadosdaDash()"></body>
+
+> <!-- Chamando a função obterDados ao carregar a página -->
+<div class="janela">
   <div class="header-left">
     <h1>BJJ <span>Engine</span></h1>
 
-     <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
-            </div>
+    <div class="hello">
+      <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+    </div>
 
     <div class="btn-nav-white">
       <a href="./cards.html">
@@ -54,10 +56,11 @@
       </a>
     </div>
 
-     <div class="btn-nav-white">
-                <a href="../formulario.html">
-                   <h3>Formulario</h3> 
-                </a> </div>
+    <div class="btn-nav-white">
+      <a href="../formulario.html">
+        <h3>Formulario</h3>
+      </a>
+    </div>
 
 
     <div class="btn-logout" onclick="limparSessao()">
@@ -68,44 +71,47 @@
   <div class="dash">
     <div id="alerta"></div>
 
+    <section id="kpis" class="container-kpis">
+      <div class="title-kpis">
+
+      </div>
+      <div class="content-kpis">
+        <div class="box-kpis">
+          <div class="box-icon"><i class="fa-solid fa-medal"></i></div>
+          <div class="box-text">
+            <h6>TOTAL</h6>
+            <p>total de usuarios que responderam o formulario</p>
+            <h2 id="total_valor_usuario">?</h2>
+          </div>
+        </div>
+        <div class="box-kpis">
+          <div class="box-icon"><i class="fa-solid fa-handshake"></i></div>
+          <div class="box-text">
+            <h6>TOTAL + PERFIL</h6>
+            <p>Honra aos mestres e cuidado com os parceiros de treino.</p>
+            <h2 id="total_valor_usuario_perfil"></h2>
+          </div>
+        </div>
+        <div class="box-kpis">
+          <div class="box-icon"><i class="fa-solid fa-brain"></i></div>
+          <div class="box-text">
+            <h6>Estratégia</h6>
+            <p>Xadrez humano: antecipe os movimentos do adversário.</p>
+          </div>
+        </div>
+      </div>
+    </section><br>
 
     <div id="graficos">
 
-     <section id="kpis" class="container-kpis">
-            <div class="title-kpis">
-               
-            </div>
-            <div class="content-kpis">
-                <div class="box-kpis">
-                    <div class="box-icon"><i class="fa-solid fa-medal"></i></div>
-                    <div class="box-text">
-                        <h6>TOTAL</h6>
-                        <p>total de usuarios que responderam o formulario</p>
-                    </div>
-                </div>
-                <div class="box-kpis">
-                    <div class="box-icon"><i class="fa-solid fa-handshake"></i></div>
-                    <div class="box-text">
-                        <h6>Respeito</h6>
-                        <p>Honra aos mestres e cuidado com os parceiros de treino.</p>
-                    </div>
-                </div>
-                <div class="box-kpis">
-                    <div class="box-icon"><i class="fa-solid fa-brain"></i></div>
-                    <div class="box-text">
-                        <h6>Estratégia</h6>
-                        <p>Xadrez humano: antecipe os movimentos do adversário.</p>
-                    </div>
-                </div>
-            </div>
-        </section><br>
 
-<div>
-  <!-- Elemento canvas onde o gráfico de linha será desenhado -->
-  <canvas id="linha"></canvas> <br>
-  <!-- Elemento canvas onde o gráfico de barra será desenhado -->
-  <canvas id="barra"></canvas>
-</div>
+
+      <div>
+        <!-- Elemento canvas onde o gráfico de linha será desenhado -->
+        <!-- <canvas id="linha"></canvas> <br> -->
+        <!-- Elemento canvas onde o gráfico de barra será desenhado -->
+        <canvas id="barra" style="position: relative; height:40vh; width:80vw"></canvas>
+      </div>
 
     </div>
   </div>
@@ -120,114 +126,241 @@
 
 <script>
 
-// Função chamada ao carregar a página para obter e processar os dados
-function obterDados(){
-  // Aqui seria a função que obteria os dados do banco de dados
-  // No caso, aqui você colocaria o fetch que teria o endereço da sua rota que você criou na pasta /routes e chamaria a função plotarGraficoLinha nessa função. Exemplo:
- 
-  // fetch('/obterDados')
-  // .then(function(response){
-  //   return response.json();
-  // })
-  // .then(function(data){
-  //   plotarGraficoLinha(data);
-  //   plotarGraficoBarra(data);
-  // })
-  // .catch(function(err){
-  //   console.log(err);
-  // })
+  function obterDadosdaDash() {
+    fetch(`/formulario/Dashboard1`, { cache: 'no-store' }).then(function (response) {
+      if (response.ok) {
+        response.json().then(function (resposta) {
+          console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+          console.log(resposta);
+          resposta.reverse();
+          plotarDadosnaDash(resposta)
+          // plotarGrafico(resposta, idAquario);
 
-  // Como eu não configurei as rotas, eu criei um array com os dados para simular a obtenção dos dados
-  var dados = [{
-    tipo:'PRESSÃO',
-    votos: 10
-  },
-  {
-    tipo: 'ESTRATÉGICO',
-    votos: 5
-  },
-  {
-    tipo:'FLEXIVEL',
-    votos: 15
-  },
-  {
-    tipo:'FINALIZADOR',
-    votos: 20
+        });
+      } else {
+        console.error('Nenhum dado encontrado ou erro na API');
+      }
+    })
+      .catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+      });
   }
-]
 
-  // Chamando a função para plotar o gráfico de linha com os dados
-  plotarGraficoLinha(dados);
-  // Chamando a função para plotar o gráfico de barra com os dados
-  plotarGraficoBarra(dados)
-}
+  function plotarDadosnaDash(resposta) {
 
-// Função para plotar o gráfico de linha
-function plotarGraficoLinha(dados){
+    const ctx = document.getElementById('barra');
+
+    let lista = []
+    let lista2 = []
+    for (let i = 0; i < resposta.length; i++) {
+      lista.push(resposta[i].quantidade_de_resposta)
+      lista2.push(resposta[i].resposta)
+    }
+
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: lista2,
+        datasets: [{
+          label: 'Quantidade de Usuarios por Tipo',
+          data: lista,
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+    
   
-  // Separando os rótulos (labels) e os dados dos votos
-  var votos = [];
-  var tipos = [];
+  }
+  // function plotarTotalUsuario(resposta){
+  //   let totalUsuario = resposta[0].totalUsuario;
 
-  // Preenchendo os arrays com os dados
-  for(var i = 0; i < dados.length; i++){
-    votos.push(dados[i].votos);
-    tipos.push(dados[i].tipo);
+  //   total_valor_usuario.innerHTML = `${totalUsuario}`
+
+  // }
+
+  // FUNÇÕES PARA OBTER TOTAL DE USUARIOS
+  function obterTotalUsuarios() {
+    fetch(`/formulario/listarTotalUsuarios`, { cache: 'no-store' }).then(function (response) {
+      if (response.ok) {
+        response.json().then(function (resposta) {
+          console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+          console.log(resposta);
+          resposta.reverse();
+          plotarTotalUsuario(resposta)
+          // plotarGrafico(resposta, idAquario);
+
+        });
+      } else {
+        console.error('Nenhum dado encontrado ou erro na API');
+      }
+    })
+      .catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+      });
   }
 
-  // Capturando o elemento canvas pelo id 
-  var ctx = document.getElementById('linha').getContext('2d');
-  // Criando o gráfico de linha usando o Chart.js
-  var myChart = new Chart(ctx, {
-      type: 'line', // Tipo de gráfico: linha
-      data: { // Dados para o gráfico
-          labels: tipos, // Rótulos no eixo X
-          datasets: [{ 
-              label: 'Votos', // Nome do conjunto de dados
-              data: votos, // Dados dos votos
-              backgroundColor: [
-                  'rgba(255, 99, 132, 0.2)', // Cor de fundo das linhas
-              ],
-              borderColor: [
-                  'rgba(255, 99, 132, 1)', // Cor da borda das linhas
-              ],
-              borderWidth: 1 // Largura da borda das linhas
-          }]
-      },
-  });
-} 
+  function plotarTotalUsuario(resposta) {
+    let totalUsuario = resposta[0].totalUsuario;
 
-// Função para plotar o gráfico de barra
-function plotarGraficoBarra(dados){
+    total_valor_usuario.innerHTML = `${totalUsuario}`
 
-  var votos = [];
-  var tipos = [];
-
-  // Preenchendo os arrays com os dados
-  for(var i = 0; i < dados.length; i++){
-    votos.push(dados[i].votos);
-    tipos.push(dados[i].tipo);
   }
 
-  // Capturando o elemento canvas pelo id 
-  var ctx = document.getElementById('barra').getContext('2d');
-  // Criando o gráfico de barra usando o Chart.js
-  var myChart = new Chart(ctx, {
-      type: 'bar', // Tipo de gráfico: barra
-      data: { // Dados para o gráfico
-          labels: tipos, // Rótulos no eixo X
-          datasets: [{
-              label: 'Votos', // Nome do conjunto de dados
-              data: votos, // Dados dos votos
-              backgroundColor: [
-                  'rgba(255, 99, 132, 0.2)', // Cor de fundo das barras
-              ],
-              borderColor: [
-                  'rgba(255, 99, 132, 1)', // Cor da borda das barras
-              ],
-              borderWidth: 1 // Largura da borda das barras
-          }]
-      },
-  });
-}
+  // FUNÇÕES PARA OBTER TOTAL DE USUARIOS DE MAIOR PERFIL
+
+  function listarTotalUsuariosMaiorPerfil() {
+    fetch(`/formulario/listarTotalUsuariosPerfil`, { cache: 'no-store' }).then(function (response) {
+      if (response.ok) {
+        response.json().then(function (resposta) {
+          console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+          console.log(resposta);
+          resposta.reverse();
+          plotarTotalUsuarioMaiorPerfil(resposta)
+
+
+        });
+      } else {
+        console.error('Nenhum dado encontrado ou erro na API');
+      }
+    })
+      .catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+      });
+  }
+  function plotarTotalUsuarioMaiorPerfil(resposta) {
+    let totalMaiorPerfil = resposta[0].TotalUsuarios
+    let listarPerfil = resposta[0].resposta
+
+    let html = `Perfil com maior quantidade pessoas: ${listarPerfil} <br>
+Total: ${totalMaiorPerfil}`
+
+    total_valor_usuario_perfil.innerHTML = html
+  }
+
+
+  // Função chamada ao carregar a página para obter e processar os dados
+  // function obterDados() {
+  //   // Aqui seria a função que obteria os dados do banco de dados
+  //   // No caso, aqui você colocaria o fetch que teria o endereço da sua rota que você criou na pasta /routes e chamaria a função plotarGraficoLinha nessa função. Exemplo:
+
+  //   // fetch('/obterDados')
+  //   // .then(function(response){
+  //   //   return response.json();
+  //   // })
+  //   // .then(function(data){
+  //   //   plotarGraficoLinha(data);
+  //   //   plotarGraficoBarra(data);
+  //   // })
+  //   // .catch(function(err){
+  //   //   console.log(err);
+  //   // })
+
+  //   // Como eu não configurei as rotas, eu criei um array com os dados para simular a obtenção dos dados
+  //   var dados = [{
+  //     tipo: 'PRESSÃO',
+  //     votos: 10
+  //   },
+  //   {
+  //     tipo: 'ESTRATÉGICO',
+  //     votos: 5
+  //   },
+  //   {
+  //     tipo: 'FLEXIVEL',
+  //     votos: 15
+  //   },
+  //   {
+  //     tipo: 'FINALIZADOR',
+  //     votos: 20
+  //   }
+  //   ]
+
+  //   // Chamando a função para plotar o gráfico de linha com os dados
+  //   // plotarGraficoLinha(dados);
+  //   // Chamando a função para plotar o gráfico de barra com os dados
+  //   plotarGraficoBarra(dados)
+  // }
+
+  // Função para plotar o gráfico de linha
+  // function plotarGraficoLinha(dados){
+
+  //   // Separando os rótulos (labels) e os dados dos votos
+  //   var votos = [];
+  //   var tipos = [];
+
+  //   // Preenchendo os arrays com os dados
+  //   for(var i = 0; i < dados.length; i++){
+  //     votos.push(dados[i].votos);
+  //     tipos.push(dados[i].tipo);
+  //   }
+
+  //   // Capturando o elemento canvas pelo id 
+  //   var ctx = document.getElementById('linha').getContext('2d');
+  //   // Criando o gráfico de linha usando o Chart.js
+  //   var myChart = new Chart(ctx, {
+  //       type: 'line', // Tipo de gráfico: linha
+  //       data: { // Dados para o gráfico
+  //           labels: tipos, // Rótulos no eixo X
+  //           datasets: [{ 
+  //               label: 'Votos', // Nome do conjunto de dados
+  //               data: votos, // Dados dos votos
+  //               backgroundColor: [
+  //                   'rgba(255, 99, 132, 0.2)', // Cor de fundo das linhas
+  //               ],
+  //               borderColor: [
+  //                   'rgba(255, 99, 132, 1)', // Cor da borda das linhas
+  //               ],
+  //               borderWidth: 1 // Largura da borda das linhas
+  //           }]
+  //       },
+  //   });
+  // } 
+
+  // Função para plotar o gráfico de barra
+  // function plotarGraficoBarra(dados) {
+
+  //   var votos = [];
+  //   var tipos = [];
+
+  //   // Preenchendo os arrays com os dados
+  //   for (var i = 0; i < dados.length; i++) {
+  //     votos.push(dados[i].votos);
+  //     tipos.push(dados[i].tipo);
+  //   }
+
+  //   // Capturando o elemento canvas pelo id 
+  //   var ctx = document.getElementById('barra').getContext('2d');
+  //   // Criando o gráfico de barra usando o Chart.js
+  //   var myChart = new Chart(ctx, {
+  //     type: 'bar', // Tipo de gráfico: barra
+  //     data: { // Dados para o gráfico
+  //       labels: tipos, // Rótulos no eixo X
+  //       datasets: [{
+  //         label: 'Votos', // Nome do conjunto de dados
+  //         data: votos, // Dados dos votos
+  //         backgroundColor: [
+  //           'rgba(255, 99, 132, 0.2)', // Cor de fundo das barras
+  //         ],
+  //         borderColor: [
+  //           'rgba(255, 99, 132, 1)', // Cor da borda das barras
+  //         ],
+  //         borderWidth: 1 // Largura da borda das barras
+  //       }]
+  //     }, options: {
+  //       responsive: true,
+  //       scales: {
+  //         y: {
+  //           beginAtZero: true
+  //         }
+  //       }
+  //     }
+  //   });
+  // }
 </script>>

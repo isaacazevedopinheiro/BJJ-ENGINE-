@@ -7,4 +7,19 @@ router.post("/cadastrar", function (req, res) {
     formularioController.cadastrar(req, res);
 });
 
+router.get("/listarTotalUsuarios", function(req, res) {
+    formularioController.listarUsuarios(req, res)
+})
+
+router.get("/listarTotalUsuariosPerfil" ,function (req, res){
+    formularioController.listarMaiorPerfil(req, res)
+})
+
+router.get("/Dashboard1", function(req, res) {
+    formularioController.enviarDashboard(req, res)
+})
+
 module.exports = router;
+
+
+
