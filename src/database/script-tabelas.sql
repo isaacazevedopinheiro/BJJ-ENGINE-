@@ -6,7 +6,6 @@
 comandos para mysql server
 */
 
-
 CREATE 	database BJJ_ENGINE;
 USE BJJ_ENGINE;
 
@@ -29,24 +28,29 @@ resposta VARCHAR(45),
 CONSTRAINT cfk_usuario FOREIGN KEY (fk_usuario) REFERENCES Usuario(idUsuario)
 );
 
-INSERT INTO Nivel_De_Acesso (Nivel_De_Acesso) VALUES 
+INSERT INTO Nivel_De_Acesso (Nivel_De_Acesso) VALUES
 ('ADMIN'), 
 ('NORMAL');
-INSERT INTO Usuario (Nome, Email, Senha, FkNivelDeAcesso) VALUES
-('Isaac','isaac@bjj.com', 'senha123', 1),
-('Noob','noob@bjj.com', '123456', 2);
+INSERT INTO Usuario (Nome, Email, Senha) VALUES
+('perfilestratégico','1@gmail', '1@gmail'),
+('perfilpressão','2@gmail', '2@gmail'),
+('perfilflexivel','3@gmail', '3@gmail'),
+('perfilfinalizador','4@gmail', '4@gmail');
 
-SELECT u.NOME,
-u.Nickname,
-u.Email, 
-u.Senha,
-n.Nivel_de_Acesso AS 'Cargo'
-FROM Usuario u
-JOIN Nivel_De_Acesso n
-on u.FkNivelDeAcesso = n.idNivel;U
-select * from Usuario; 
-	delete from Usuario where idUsuario = 21;
+INSERT INTO perfil_usuario (fk_usuario , resposta) VALUES
+(1, 'Pressão'),
+(2, 'Estratégico'),
+(3, 'Flexivel'),
+(4, 'Finalizador');
 
-alter table Usuario drop column NickName;
 
-show columns from Usuario;
+-- show columns from Usuario;
+-- show columns from perfil_usuario;
+
+SELECT * FROM Usuario;
+
+SELECT pu.fk_usuario , pu.resposta, u.Nome, u.Email, u.Senha 
+FROM perfil_usuario pu 
+JOIN Usuario u 
+ON u.idUsuario = pu.fk_usuario;
+
