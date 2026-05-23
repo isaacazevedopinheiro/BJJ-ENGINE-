@@ -60,7 +60,9 @@ function calcular() {
     estilos = 'Flexivel';
     resultado = `
       <h2>Estilo: Flexivel</h2>
-      <img src="./assets/img/movel.jpg" class="img-resultado">
+           <center>
+      <img src="./assets/midia/flexivel.png"width="300" height="400">
+       </center>
       <p><b>Perfil:</b> Guarda / Escapador</p>
       <p><b>Finalização:</b> Triângulo ou Chave de perna</p>
     `;
@@ -68,7 +70,9 @@ function calcular() {
     estilos = 'Finalizador';
     resultado = `
       <h2>Estilo: Finalizador</h2>
-      <img src="./assets/img/finalizador.jpg" class="img-resultado">
+           <center>
+      <img src="./assets/midia/finalizador.png" width="300" height="400">
+       </center>
       <p><b>Perfil:</b> Caçador de finalizações</p>
       <p><b>Finalização:</b> Guilhotina ou Mata-leão</p>
     `;
@@ -97,15 +101,15 @@ function calcular() {
     } 
 
 
-    // Enviando o valor da nova input
+    // enviando o valor da nova input
     fetch("/formulario/cadastrar", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        // crie um atributo que recebe o valor recuperado aqui
-        // Agora vá para o arquivo routes/usuario.js
+        // recebe o valor recuperado aqui
+        //vá pro o arquivo routes/usuario.js
         fkUsuarioServer: id_usuario,
         respostaServer: perfil
        

@@ -49,8 +49,9 @@ INSERT INTO perfil_usuario (fk_usuario , resposta) VALUES
 
 SELECT * FROM Usuario;
 
-SELECT pu.fk_usuario , pu.resposta, u.Nome, u.Email, u.Senha 
+SELECT  u.Nome, u.Email, u.Senha , pu.resposta 
 FROM perfil_usuario pu 
 JOIN Usuario u 
 ON u.idUsuario = pu.fk_usuario;
+
 
