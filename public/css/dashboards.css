@@ -196,6 +196,14 @@ canvas {
   transform: translateY(-10px);
   border: 1px solid var(--cor02);
 }
-#graficos{
-  width: 50%;
+#graficos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#graficos div {
+    width: 90%;
+    max-width: 1000px;
 }

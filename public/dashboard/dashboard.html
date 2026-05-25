@@ -31,7 +31,7 @@
 
 <body onload="obterTotalUsuarios(), listarTotalUsuariosMaiorPerfil(), obterDadosdaDash()"></body>
 
-> <!-- Chamando a função obterDados ao carregar a página -->
+ <!-- Chamando a função obterDados ao carregar a página -->
 <div class="janela">
   <div class="header-left">
     <h1>BJJ <span>Engine</span></h1>
@@ -158,23 +158,60 @@
     }
 
     new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: lista2,
-        datasets: [{
-          label: 'Quantidade de Usuarios por Tipo',
-          data: lista,
-          borderWidth: 1
-        }]
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true
-          }
+  type: 'bar',
+  data: {
+    labels: lista2,
+    datasets: [{
+      label: 'Quantidade de Usuarios por Tipo',
+      data: lista,
+      backgroundColor: [
+        'red',
+        'white',
+        '#990000',
+        'grey'
+      ],
+      borderColor: [
+        'white',
+        'white',
+        'white',
+        'white'
+      ],
+      borderWidth: 1,
+      borderRadius: 10
+    }]
+  },
+  // aqui tem as barrinhas
+  options: {
+    plugins: {
+      legend: {
+        labels: {
+          color: 'white'
         }
       }
-    });
+    },
+
+    scales: {
+      x: {
+        ticks: {
+          color: 'white'
+        },
+
+        grid: {
+          color: '#333'
+        }
+      },
+      y: {
+        beginAtZero: true,
+        ticks: {
+          color: 'white'
+        },
+        grid: {
+          color: '#333'
+        }
+      }
+    }
+  }
+});
 
     
   
@@ -363,4 +400,4 @@ Total: ${totalMaiorPerfil}`
   //     }
   //   });
   // }
-</script>>
+</script>
