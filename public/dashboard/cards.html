@@ -6,8 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BJJ ENGINE</title>
-
+    <title>BJJ ENGINE - Meu Perfil</title>
 
     <link rel="stylesheet" href="./../css/dashboards.css">
     <link rel="stylesheet" href="./../css/estilo.css" />
@@ -15,20 +14,15 @@
     <script src="../js/sessao.js"></script>
     <script src="../js/alerta.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@100;300;400;600;700;900&display=swap" rel="stylesheet">
 </head>
 
-<body onload="validarSessao(), exibirAquarios(),  atualizacaoPeriodica()">
+<body onload="validarSessao(), carregarPerfilDoUsuario()">
 
     <div class="janela">
-
-
-            
-            <div class="janela">
-  <div class="header-left">
-    <h1>BJJ <span>Engine</span></h1>
+        
+        <div class="header-left">
+            <h1>BJJ <span>Engine</span></h1>
 
             <div class="hello">
                 <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
@@ -45,57 +39,19 @@
             </div>
 
             <div class="btn-nav-white">
-                <a href="./mural.html">
-                    <h3>Mural de Avisos</h3>
-                </a>
-            </div>
-
-            <div class="btn-nav-white">
                 <a href="../formulario.html">
-                   <h3>Formulario</h3> 
-                </a> </div>
+                   <h3>Formulário</h3> 
+                </a> 
+            </div>
 
             <div class="btn-logout" onclick="limparSessao()">
                 <h3>Sair</h3>
             </div>
-
         </div>
 
         <div class="dash">
-            <div id="alerta">
-            </div>
-            <div class="area-parametros-alerta">
-                <p class="titulo-legenda">
-                    Legenda - Parâmetros para Alertas
-                </p>
-                <div class="parametros-alerta">
-                    <div class="item-regua perigo-frio">
-                        <p>Perigo</p>
-                        <p>&lt;=5°C</p>
-                    </div>
-                    <div class="item-regua alerta-frio">
-                        <p>Alerta</p>
-                        <p>&lt;=10°C</p>
-                    </div>
-                    <div class="item-regua ideal">
-                        <p>Ideal</p>
-                        <p>20°C</p>
-                    </div>
-                    <div class="item-regua alerta-quente">
-                        <p>Alerta</p>
-                        <p>&gt;=22°C</p>
-                    </div>
-                    <div class="item-regua perigo-quente">
-                        <p>Perigo</p>
-                        <p>&gt;=23°C</p>
-                    </div>
+            <div id="resultado_perfil" class="card-aquario" style="width: 80%; margin: 40px auto; padding: 20px; text-align: center; background-color: #212124; border-radius: 10px; color: white;">
                 </div>
-            </div>
-
-            <div class="cards" id="cardAquarios">
-
-            </div>
-
         </div>
 
     </div>
@@ -103,25 +59,66 @@
 </body>
 
 <script>
+    // lê o clique do formulário 
+    function carregarPerfilDoUsuario() {
+        // Busca o nome do usuário para atualizar o cabeçalho lateral
+        document.getElementById("b_usuario").innerHTML = sessionStorage.NOME_USUARIO;
 
-    function exibirAquarios() {
-        JSON.parse(sessionStorage.AQUARIOS).forEach(item => {
-            document.getElementById("cardAquarios").innerHTML += `
-                    <div class="card-aquario">
-                        <div class="title-aquario">
-                            <h1>${item.descricao}</h1>
-                        </div>
-                        <div class="desc-aquario">
-                        <div class="temperatura">
-                            <p id="temp_aquario_${item.id}">-°C</p>
-                        </div>
-                        <div class="cor-alerta" id="card_${item.id}"></div>
-                    </div>
-                    </div>
-                    `
-        });
+        // Recupera qual estilo de luta foi calculado e salvo na sessão
+        let ultimoEstilo = sessionStorage.ESTILO_ATUAL;
+        let containerPerfil = document.getElementById("resultado_perfil");
+
+        let htmlzao = "";
+
+        if (ultimoEstilo === "Pressão") {
+            htmlzao = `
+                <h2>Seu Estilo Dominante: Pressão</h2>
+                <br>
+                <center><img src="../assets/midia/pressao.png" width="300" height="400" style="border-radius: 8px; border: 2px solid #5d1212;"></center>
+                <br>
+                <p><b>Perfil Tático:</b> Passador / Quedador</p>
+                <p><b>Finalizações Favoritas:</b> Mata-leão ou Americana</p>
+            `;
+        } else if (ultimoEstilo === "Estratégico") {
+            htmlzao = `
+                <h2>Seu Estilo Dominante: Estratégico</h2>
+                <br>
+                <center><img src="../assets/midia/estrategico.png" width="300" height="400" style="border-radius: 8px; border: 2px solid #12405d;"></center>
+                <br>
+                <p><b>Perfil Tático:</b> Defensivo Técnico</p>
+                <p><b>Finalizações Favoritas:</b> Triângulo ou Arm-lock</p>
+            `;
+        } else if (ultimoEstilo === "Flexivel") {
+            htmlzao = `
+                <h2>Seu Estilo Dominante: Flexivel</h2>
+                <br>
+                <center><img src="../assets/midia/flexivel.png" width="300" height="400" style="border-radius: 8px; border: 2px solid #125d2c;"></center>
+                <br>
+                <p><b>Perfil Tático:</b> Guarda / Escapador</p>
+                <p><b>Finalizações Favoritas:</b> Triângulo ou Chave de perna</p>
+            `;
+        } else if (ultimoEstilo === "Finalizador") {
+            htmlzao = `
+                <h2>Seu Estilo Dominante: Finalizador</h2>
+                <br>
+                <center><img src="../assets/midia/finalizador.png" width="300" height="400" style="border-radius: 8px; border: 2px solid #56125d;"></center>
+                <br>
+                <p><b>Perfil Tático:</b> Caçador de finalizações</p>
+                <p><b>Finalizações Favoritas:</b> Guilhotina ou Mata-leão</p>
+            `;
+        } else {
+            // Tratamento caso ele clique em "Meu Perfil" antes de responder o quiz pela primeira vez
+            htmlzao = `
+                <h2>Você ainda não calculou o seu perfil</h2>
+                <br>
+                <p>Responda às 10 perguntas do nosso questionário IRADO para saber seu perfil</p>
+                
+            `;
+        }
+
+        // Renderiza o bloco de texto e imagens na div do perfil
+        containerPerfil.innerHTML = htmlzao;
     }
-
 </script>
 
 </html>
