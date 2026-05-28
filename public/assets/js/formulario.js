@@ -6,7 +6,7 @@ function calcular() {
   // for (let i = 1; i <= 10; i++) {
   //   let checarQuestao = document.querySelector(`input[name="q${i}"]:checked`);
   //   if (!checarQuestao) {
-  //     alert(`Por favor, responda à pergunta número ${i} antes de ver o resultado!`);
+  //     alert(`respondw à pergunta número ${i} antes de ver o resultado!`);
   //     formularioPreenchido = false;
   //     break; 
   //   }
@@ -19,7 +19,7 @@ function calcular() {
   
   // 0=a, 1=b, 2=c, 3=d 
   let respostas = [0, 0, 0, 0];
-
+ let letras = ["A", "B", "C", "D"];
 
   for (let i = 1; i <= 10; i++) {
 
@@ -48,8 +48,8 @@ function calcular() {
     }
   }
 
-  /* outro vetor pq agora: número --> letra */
-  let letras = ["A", "B", "C", "D"];
+
+ 
   let maior = letras[maiorIndice];
 
   let resultado = "";
@@ -98,7 +98,7 @@ function cadastrar() {
   let perfil = estilos;
   let id_usuario = sessionStorage.ID_USUARIO;
 
-  // AORA VAI PLDMSSS!!A
+
   if (perfil == "" || id_usuario == "" || id_usuario == undefined) {
     alert('ErroNOS USERS: Faça login novamente antes de enviar o formulário.');
     return false;

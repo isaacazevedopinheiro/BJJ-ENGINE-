@@ -23,6 +23,7 @@ var usuarioRouter = require("./src/routes/usuarios");
 // var empresasRouter = require("./src/routes/empresas");
 var formularioRouter = require("./src/routes/formulario");
 
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
