@@ -125,13 +125,16 @@
 
 
 <script>
-
+//1
   function obterDadosdaDash() {
     fetch(`/formulario/Dashboard1`, { cache: 'no-store' }).then(function (response) {
       if (response.ok) {
+        // se ta td certo continua e transforma o fluxo de txt em json
         response.json().then(function (resposta) {
           console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
           console.log(resposta);
+
+          //inverti a order pq ficabugando e pegando primeiros registros
           resposta.reverse();
           plotarDadosnaDash(resposta)
           // plotarGrafico(resposta, idAquario);
@@ -146,6 +149,7 @@
       });
   }
 
+  //5
   function plotarDadosnaDash(resposta) {
 
     const ctx = document.getElementById('barra');

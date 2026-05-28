@@ -126,8 +126,8 @@ function cadastrar() {
     sessionStorage.ESTILO_ATUAL = perfil;
 
     setTimeout(function () {
-        window.location = "dashboard/dashboard.html"; // Coloque o nome correto do seu arquivo de dash aqui
-    }, 1000);
+        window.location = "dashboard/cards.html";
+    }, 3000);
 
   } else {
       throw "houve um erro ao tentar realizar o cadastro";
